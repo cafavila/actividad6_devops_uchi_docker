@@ -8,25 +8,11 @@ jobs:
       - checkout
       - run:
           name: "Build" 
-          command: echo "Se construye el contenedor"
-
-  test:
-    docker:
-      - image: cimg/node:17.8.0-alpine3.14
-    stepd:
-      - checkout
-      - run: echo "Prueba de ejecucion"
+          command: | 
+            echo "Se construye el contenedor"
+            node --version
 
 workflows:
   build_and_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
-      - hold:
-          type: approval
-          requires:
-            - build
-            - test
-          
