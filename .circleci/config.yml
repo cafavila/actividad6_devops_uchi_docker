@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run:
-        - name: "Build" 
-        - command: echo "Se construye el contenedor" |
+          name: "Build" 
+          command: echo "Se construye el contenedor" |
                    node --version
   test:
     docker:
