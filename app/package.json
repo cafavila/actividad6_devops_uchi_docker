@@ -1,0 +1,24 @@
+{
+  "name": "actividad-6",
+  "version": "1.0.0",
+  "description": "Actividad evaluable del módulo 6: Implementación con Docker",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cafavila/actividad6_devops_uchi_docker.git"
+  },
+  "author": "cavila",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cafavila/actividad6_devops_uchi_docker/issues"
+  },
+  "homepage": "https://github.com/cafavila/actividad6_devops_uchi_docker#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
