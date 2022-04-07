@@ -1,0 +1,12 @@
+# ignore las carpetas .git y .cache
+.git
+.cache
+.circleci
+
+# ignore los archivos de documentacion de markdown
+.md 
+
+# ignore archivos sensitivos
+private.key
+*.pem
+settings.json
