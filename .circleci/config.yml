@@ -15,7 +15,7 @@ jobs:
           command: |
             echo "Realizando pruebas"
             docker run -dp 3000:3000 --name app -it adimen/app:$CIRCLE_BRANCH
-            echo "Verfivica que corre primero"
+            echo "Verifica que esta en ejecucion el contenedor"
             docker ps
             echo "Probando..." 
             curl http://localhost:3000/test
