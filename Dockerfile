@@ -15,8 +15,8 @@ WORKDIR /home/app
 COPY /app/package.json .
 COPY /app/package-lock.json .
 
+RUN chown -R devops:devops *.json
 RUN ls -ltr
-RUN chmod -R 755 *.json
 
 RUN npm install --production
 
