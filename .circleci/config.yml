@@ -17,8 +17,9 @@ jobs:
           command: |
             echo "Realizando pruebas"
             cd app
-            npm start
-            wget http://127.0.0.1:3000/test
+            npm start > nohup.log
+            wget http://127.0.0.1:3000/test >> nohup.log
+            npm stop
 workflows:
   build_and_test:
     jobs:
