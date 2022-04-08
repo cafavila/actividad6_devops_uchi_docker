@@ -1,23 +1,21 @@
 version: 2.1
 jobs:
   build:
-    docker:
-      - image: cimg/node:17.8.0
+    machine: true
     steps:
       - checkout
       - run:
           name: "Primera etapa - Instalacion y construccion" 
           command: | 
             echo "Se construye el contenedor"
-            node --version
             ls -ltr
-            docker image build -t app .
+            docker run -dp 3000:3000 --name app
       - run:
           name: "Segunda etapa - Ejecucion y Pruebas"
           command: |
             echo "Realizando pruebas"
-            docker run -dp 3000:3000 app
-            wget http://127.0.0.1:3000/test
+            docker build -t adimen/app:$CIRCLE_BRANCH .
+            wget http://localhost:3000/test
 workflows:
   build_and_test:
     jobs:
