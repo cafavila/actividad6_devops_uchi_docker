@@ -9,12 +9,12 @@ jobs:
           command: | 
             echo "Se construye el contenedor"
             ls -ltr
-            docker run -dp 3000:3000 --name app
+            docker build -t adimen/app:$CIRCLE_BRANCH .
       - run:
           name: "Segunda etapa - Ejecucion y Pruebas"
           command: |
             echo "Realizando pruebas"
-            docker build -t adimen/app:$CIRCLE_BRANCH .
+            docker run -dp 3000:3000 --name app
             wget http://localhost:3000/test
 workflows:
   build_and_test:
