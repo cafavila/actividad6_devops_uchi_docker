@@ -9,8 +9,7 @@ jobs:
           name: "Paso 1" 
           command: | 
             echo "Se construye el contenedor"
-            node --version
-
+#            node --version
 workflows:
   build_and_test:
     jobs:
