@@ -11,7 +11,7 @@ jobs:
             echo "Se construye el contenedor"
             node --version
             ls -ltr
-            docker build -t app
+            docker image build -t app
       - run:
           name: "Segunda etapa - Ejecucion y Pruebas"
           command: |
