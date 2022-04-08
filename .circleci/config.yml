@@ -14,8 +14,8 @@ jobs:
           name: "Segunda etapa - Pruebas"
           command: |
             echo "Realizando pruebas"
-            npm start
-            wget http://127.0.0.1:3000/test
+            cd /home/app
+            ls -ltr
 workflows:
   build_and_test:
     jobs:
