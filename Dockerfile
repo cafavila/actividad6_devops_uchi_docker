@@ -19,3 +19,5 @@ RUN npm install --production
 COPY ./app /home/app
 
 CMD ['npm', 'start']
+
+EXPOSE 3000

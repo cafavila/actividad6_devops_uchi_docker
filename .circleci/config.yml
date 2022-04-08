@@ -6,21 +6,17 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Primera etapa - Instalacion" 
+          name: "Primera etapa - Instalacion y construccion" 
           command: | 
             echo "Se construye el contenedor"
             node --version
-            cd app
-            npm install
+            docker build -t app
       - run:
-          name: "Segunda etapa - Pruebas"
+          name: "Segunda etapa - Ejecucion y Pruebas"
           command: |
             echo "Realizando pruebas"
-            cd app
-            npm start > nohup.log &
-            wget http://127.0.0.1:3000/test >> nohup.log
-            npm stop
-            cat nohup.log
+            docker run -dp 3000:3000 app
+            wget http://127.0.0.1:3000/test
 workflows:
   build_and_test:
     jobs:
