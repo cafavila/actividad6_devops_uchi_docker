@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      -   docker: circleci/docker@1.0.1
+      - image: circleci/docker@1.0.1
     steps:
       - checkout
       - run:
