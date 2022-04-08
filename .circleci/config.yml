@@ -18,7 +18,7 @@ jobs:
             echo "Verfivica que corre primero"
             docker ps
             echo "Probando..." 
-            wget http://localhost:3000/test
+            curl http://localhost:3000/test
 workflows:
   build_and_test:
     jobs:
