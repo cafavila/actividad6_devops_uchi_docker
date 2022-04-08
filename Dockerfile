@@ -7,6 +7,7 @@ RUN mkdir /home/app
 
 # Setear las propiedades de acceso
 RUN chown -R devops:devops /home/app
+RUN chmod -R 755 /home/app
 
 USER devops
 
