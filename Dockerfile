@@ -1,7 +1,7 @@
 FROM node:17.8.0-alpine3.14
 
 # Crear grupo y usuario
-RUN addgroup -r devops && adduser -g devops devops
+RUN addgroup -S devops && adduser -S devops -G devops
 
 # Setear las propiedades de acceso
 RUN chown -R devops:devops /app
