@@ -7,7 +7,6 @@ RUN mkdir /home/app
 
 # Setear las propiedades de acceso
 RUN chown -R devops:devops /home/app
-RUN chmod -R 755 /home/app
 
 USER devops
 
@@ -15,6 +14,9 @@ WORKDIR /home/app
 
 COPY /app/package.json .
 COPY /app/package-lock.json .
+
+RUN ls -ltr
+RUN chmod -R 755 *.json
 
 RUN npm install --production
 
