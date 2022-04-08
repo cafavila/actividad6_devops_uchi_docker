@@ -10,11 +10,12 @@ jobs:
           command: | 
             echo "Se construye el contenedor"
             node --version
+            cd app
+            npm install
       - run:
           name: "Segunda etapa - Pruebas"
           command: |
             echo "Realizando pruebas"
-            cd app
             npm start
             wget http://127.0.0.1:3000/test
 workflows:
