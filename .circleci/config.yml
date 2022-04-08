@@ -6,10 +6,16 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Paso 1" 
+          name: "Primera etapa - Instalacion" 
           command: | 
             echo "Se construye el contenedor"
             node --version
+      - run:
+          name: "Segunda etapa - Pruebas"
+          command: |
+            echo "Realizando pruebas"
+            npm start
+            wget http://127.0.0.1:3000/test
 workflows:
   build_and_test:
     jobs:
