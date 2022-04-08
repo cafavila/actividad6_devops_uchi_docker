@@ -14,7 +14,7 @@ jobs:
           name: "Segunda etapa - Ejecucion y Pruebas"
           command: |
             echo "Realizando pruebas"
-            docker run -dp 8080:3000 --name app -it adimen/app-$CIRCLE_BRANCH:$CIRCLE_BUILD_NUM
+            docker run -dp 80:3000 --name app -it adimen/app-$CIRCLE_BRANCH:$CIRCLE_BUILD_NUM
             echo "Verifica que esta en ejecucion el contenedor"
             docker ps
             echo "Probando..." 
