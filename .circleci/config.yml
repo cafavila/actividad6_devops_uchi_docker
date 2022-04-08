@@ -15,6 +15,9 @@ jobs:
           command: |
             echo "Realizando pruebas"
             docker run -dp 3000:3000 --name app -it adimen/app:$CIRCLE_BRANCH
+            echo "Verfivica que corre primero"
+            docker ps
+            echo "Probando..." 
             wget http://localhost:3000/test
 workflows:
   build_and_test:
