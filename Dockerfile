@@ -5,17 +5,15 @@ RUN addgroup -S devops && adduser -S devops -G devops
 
 RUN mkdir /home/app
 
-# Setear las propiedades de acceso
-RUN chown -R devops:devops /home/app
-
-USER devops
-
 WORKDIR /home/app
 
 COPY /app/package.json .
 COPY /app/package-lock.json .
 
-RUN chown -R devops:devops *.json
+# Setear las propiedades de acceso
+RUN chown -R devops:devops /home/app
+
+USER devops
 RUN ls -ltr
 
 RUN npm install --production
